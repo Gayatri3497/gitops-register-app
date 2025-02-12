@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: registerapp  
+spec:
+  # Secret names are always required.
+  secretName: registerapp
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: app.shubhamk.online    
+  dnsNames:
+  - app.shubhamk.online

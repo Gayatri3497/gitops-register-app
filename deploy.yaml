@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: register-deployment
+  namespace: register-app
+  labels:
+    app: register-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register-app
+  template:
+    metadata:
+      name: register-app
+      labels:
+        app: register-app
+    spec:
+      containers:
+        - name: register-app
+          image: gayatri963/register-app:latest
+          resources:
+            requests:
+              memory: "500M"
+              cpu: "500m"
+            limits:
+              memory: "500M"
+              cpu: "500m"     
+          ports:
+            - containerPort: 8080
+
