@@ -33,7 +33,7 @@ pipeline {
                    git config --global user.name "Gayatri3497"
                    git config --global user.email "gayatri.kalukhe97@gmail.com"
                    git add deploy.yaml
-                   git commit -m "added yaml files"
+                   git commit -m "Updated Deployment Manifest"
                    
                """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
