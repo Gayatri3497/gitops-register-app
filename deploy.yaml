@@ -17,7 +17,7 @@ spec:
         app: register-app
     spec:
       containers:
-        - name: register-app
+        - name: register-app  
           image: gayatri963/register-app:latest
           resources:
             requests:
