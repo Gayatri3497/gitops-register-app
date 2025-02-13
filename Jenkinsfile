@@ -33,9 +33,13 @@ pipeline {
                    git config --global user.name "Gayatri3497"
                    git config --global user.email "gayatri.kalukhe97@gmail.com"
                    git add deploy.yaml
-                   git commit -m "Updated Deployment Manifest"
-                   
-               """
+                   if ! git diff-index --quiet HEAD; then
+                      git commit -m "Updated Deployment Manifest"
+                      git push origin main
+                   else
+                      echo "No changes detected, skipping commit and push."
+                   fi
+                  """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
                   sh "git push https://github.com/Gayatri3497/gitops-register-app main"
                 }
