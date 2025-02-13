@@ -20,9 +20,6 @@ spec:
         - name: register-app  
           image: gayatri963/register-app:latest
           resources:
-            requests:
-              memory: "500M"
-              cpu: "500m"
             limits:
               memory: "500M"
               cpu: "500m"     
